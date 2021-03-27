@@ -9,6 +9,15 @@ Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/python-mint-fee
 
 Summary: Mimetic INTerpolation on the Sphere.
 
+mint regrids edge centred fields from a source to a destination grid.
+The grid is stored as a collection of grid cells, which have four vertices
+(i.e., the cells are quadrilaterals). The edge field is stored as integrals
+of a vector field along each edge. The vertex coordinates are stored in
+longitude-latitude space. The regridding method is mimetic in the sense that
+Stokes's theorem is satisfied to near machine precision. In particular, the
+loop integrals of an interpolated vector field deriving from a gradient is zero.
+
+
 Current build status
 ====================
 
@@ -169,4 +178,5 @@ Feedstock Maintainers
 =====================
 
 * [@bjlittle](https://github.com/bjlittle/)
+* [@pletzer](https://github.com/pletzer/)
 
