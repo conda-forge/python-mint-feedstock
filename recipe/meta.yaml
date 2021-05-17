@@ -1,4 +1,4 @@
-{% set version = "1.8.0" %}
+{% set version = "1.13.1" %}
 {% set vtk_version = "9.0.1" %}
 
 package:
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://github.com/pletzer/mint/archive/v{{ version }}.tar.gz
-  sha256: 3958a1f7c43eacf04d4926027eb988d614ade208b65343d979a40ab45466f386
+  sha256: 94d4dcf534afef2d875366427cae4258f1748f94823e4bdbdb3d02d547b5c630
 
 build:
-  number: 2
+  number: 0
   skip: true  # [py<36 or py>38 or win]
   script: {{ PYTHON }} -m pip install . --no-deps -vvv
 
@@ -18,6 +18,7 @@ requirements:
   build:
     - {{ compiler('fortran') }}
     - {{ compiler('cxx') }}
+    - {{ cdt('mesa-libGL-devel') }}
   host:
     - python
     - cython
