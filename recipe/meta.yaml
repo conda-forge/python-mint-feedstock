@@ -11,7 +11,7 @@ source:
 
 build:
   number: 0
-  skip: true  # [py<36 or py>39]
+  skip: true  # [py<37 or py>39]
   script: {{ PYTHON }} -m pip install . --no-deps -vvv
 
 requirements:
