@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://github.com/pletzer/mint/archive/v{{ version }}.tar.gz
-  sha256: d008c84a116ebc06fc56c7970af52147c537ddff35011c1043c2d68c36b6c67f
+  sha256: 8ef5ebbd363f0bb0c1d89d1a45788adabcf0f4d7da85570a7b25cb854bd5a6fc
 
 build:
-  number: 0
+  number: 1
   skip: true  # [py<37 or py>39 or win]
   script: {{ PYTHON }} -m pip install . --no-deps -vvv
 
