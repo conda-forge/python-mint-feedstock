@@ -16,13 +16,11 @@ build:
 
 requirements:
   build:
-    - {{ compiler('fortran') }}
     - {{ compiler('cxx') }}
     - {{ cdt('mesa-libGL-devel') }}
   host:
     - python
     - cython
-    - doxygen
     - libnetcdf
     - pip
     - setuptools
