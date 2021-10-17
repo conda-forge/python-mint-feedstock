@@ -1,5 +1,9 @@
 MACOSX_DEPLOYMENT_TARGET:
 - '10.9'
+c_compiler:
+- clang
+c_compiler_version:
+- '11'
 channel_sources:
 - conda-forge
 channel_targets:
@@ -26,3 +30,6 @@ tbb_devel:
 - '2020'
 vtk:
 - 9.0.3
+zip_keys:
+- - c_compiler_version
+  - cxx_compiler_version
