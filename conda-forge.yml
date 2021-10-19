@@ -1,1 +1,9 @@
 conda_forge_output_validation: true
+provider:
+  linux: azure
+  osx: azure
+  win: azure
+azure:
+  settings_win:
+      pool:
+          vmImage: windows-2019

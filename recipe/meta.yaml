@@ -1,5 +1,5 @@
-{% set version = "1.15.4" %}
-{% set vtk_version = "9.0.1" %}
+{% set version = "1.18.3" %}
+{% set vtk_version = "9.0.3" %}
 
 package:
   name: python-mint
@@ -7,22 +7,21 @@ package:
 
 source:
   url: https://github.com/pletzer/mint/archive/v{{ version }}.tar.gz
-  sha256: d008c84a116ebc06fc56c7970af52147c537ddff35011c1043c2d68c36b6c67f
+  sha256: 8ef5ebbd363f0bb0c1d89d1a45788adabcf0f4d7da85570a7b25cb854bd5a6fc
 
 build:
-  number: 1
-  skip: true  # [py<36 or py>38 or win]
+  number: 9
+  skip: true  # [py<39 or py>39]
   script: {{ PYTHON }} -m pip install . --no-deps -vvv
 
 requirements:
   build:
-    - {{ compiler('fortran') }}
+    - {{ compiler('c') }}
     - {{ compiler('cxx') }}
-    - {{ cdt('mesa-libGL-devel') }}
+    - {{ cdt('mesa-libGL-devel') }}  # [linux]
   host:
     - python
     - cython
-    - doxygen
     - libnetcdf
     - pip
     - setuptools
