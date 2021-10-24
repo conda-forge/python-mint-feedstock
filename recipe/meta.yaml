@@ -1,4 +1,5 @@
 {% set version = "1.18.3" %}
+{% set netcdf_version = "4.8.1" %}
 {% set vtk_version = "9.0.3" %}
 
 package:
@@ -10,7 +11,7 @@ source:
   sha256: 8ef5ebbd363f0bb0c1d89d1a45788adabcf0f4d7da85570a7b25cb854bd5a6fc
 
 build:
-  number: 9
+  number: 10
   skip: true  # [py<39 or py>39]
   script: {{ PYTHON }} -m pip install . --no-deps -vvv
 
@@ -22,15 +23,15 @@ requirements:
   host:
     - python
     - cython
-    - libnetcdf
     - pip
     - setuptools
     - tbb-devel
+    - libnetcdf ={{ netcdf_version }}
     - vtk ={{ vtk_version }}
   run:
     - python
-    - libnetcdf 
     - numpy
+    - libnetcdf ={{ netcdf_version }}
     - vtk ={{ vtk_version }}
 
 test:
@@ -45,10 +46,10 @@ about:
   summary: Mimetic INTerpolation on the Sphere.
   description: |
     mint regrids edge centred fields from a source to a destination grid.
-    The grid is stored as a collection of grid cells, which have four vertices
-    (i.e., the cells are quadrilaterals). The edge field is stored as integrals
-    of a vector field along each edge. The vertex coordinates are stored in
-    longitude-latitude space. The regridding method is mimetic in the sense that
+    The grid is stored as a collection of grid cells, each having four vertices
+    (i.e., the cells are quadrilaterals) in longitude-latitude space. 
+    The edge field is stored as integralsmof a vector field along each edge. 
+    The regridding method is mimetic in the sense that
     Stokes's theorem is satisfied to near machine precision. In particular, the
     loop integrals of an interpolated vector field deriving from a gradient is zero.
 
