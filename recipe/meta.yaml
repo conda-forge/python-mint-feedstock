@@ -33,7 +33,7 @@ requirements:
     - python
     - numpy
     - netcdf4 ={{ netcdf4_version }}
-    - libnetcdf ={{ netcdf_version }}
+    - libnetcdf ={{ libnetcdf_version }}
     - vtk ={{ vtk_version }}
 
 test:
