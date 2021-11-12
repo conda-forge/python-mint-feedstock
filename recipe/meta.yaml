@@ -32,7 +32,7 @@ requirements:
   run:
     - python
     - numpy
-    - netcdf4={{ netcdf4_version }}
+    - netcdf4 ={{ netcdf4_version }}
     - libnetcdf ={{ netcdf_version }}
     - vtk ={{ vtk_version }}
 
