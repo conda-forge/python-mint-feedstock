@@ -1,5 +1,6 @@
 {% set version = "1.19.1" %}
-{% set vtk_version = "9.0.3" %}
+{% set vtk_version = "9.1.0" %}
+{% set netcdf4_version = "1.5.8" %}
 
 package:
   name: python-mint
@@ -10,7 +11,7 @@ source:
   sha256: 7cdd2f7c09f92e996866d0c01899f91c6e58a1f9332aac766c05c13a3ed86e2c
 
 build:
-  number: 0
+  number: 1
   skip: true  # [py<39 or py>39]
   script: {{ PYTHON }} -m pip install . --no-deps -vvv
 
