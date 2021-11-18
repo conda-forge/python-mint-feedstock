@@ -1,11 +1,13 @@
 c_compiler:
-- vs2019
+- vs2017
 channel_sources:
 - conda-forge
 channel_targets:
 - conda-forge main
 cxx_compiler:
-- vs2019
+- vs2017
+libnetcdf:
+- 4.8.0
 pin_run_as_build:
   python:
     min_pin: x.x
@@ -19,4 +21,4 @@ target_platform:
 tbb_devel:
 - '2020'
 vtk:
-- 9.0.3
+- 9.1.0

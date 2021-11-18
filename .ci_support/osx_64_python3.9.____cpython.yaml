@@ -12,6 +12,8 @@ cxx_compiler:
 - clangxx
 cxx_compiler_version:
 - '11'
+libnetcdf:
+- 4.8.0
 macos_machine:
 - x86_64-apple-darwin13.4.0
 pin_run_as_build:
@@ -27,7 +29,7 @@ target_platform:
 tbb_devel:
 - '2020'
 vtk:
-- 9.0.3
+- 9.1.0
 zip_keys:
 - - c_compiler_version
   - cxx_compiler_version
