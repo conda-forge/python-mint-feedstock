@@ -1,4 +1,4 @@
-{% set version = "1.19.3" %}
+{% set version = "1.20.0" %}
 {% set vtk_version = "9.1.0" %}
 {% set libnetcdf_version = "4.8.1" %}
 {% set netcdf4_version = "1.5.8" %}
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://github.com/pletzer/mint/archive/v{{ version }}.tar.gz
-  sha256: 1fae0e291c594766e514d5924da09847ed2dd9da44a40be5ffdb6e7292121853
+  sha256: 8173f7e9967ba1830a475850d7fae17db68e4469e8a5790fc5a70bfee67618e7
 
 build:
   number: 0
