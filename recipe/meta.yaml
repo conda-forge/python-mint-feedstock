@@ -12,8 +12,8 @@ source:
   sha256: 8173f7e9967ba1830a475850d7fae17db68e4469e8a5790fc5a70bfee67618e7
 
 build:
-  number: 1
-  skip: true  # [py<39]
+  number: 3
+  skip: true  # [py<38]
   script: {{ PYTHON }} -m pip install . --no-deps -vvv
 
 requirements:
@@ -50,7 +50,7 @@ about:
     mint regrids edge centred fields from a source to a destination grid.
     The grid is stored as a collection of grid cells, each having four vertices
     (i.e., the cells are quadrilaterals) in longitude-latitude space. 
-    The edge field is stored as integralsmof a vector field along each edge. 
+    The edge field is stored as integrals of a vector field along each edge. 
     The regridding method is mimetic in the sense that
     Stokes's theorem is satisfied to near machine precision. In particular, the
     loop integrals of an interpolated vector field deriving from a gradient is zero.
