@@ -1,7 +1,5 @@
-{% set version = "1.20.0" %}
+{% set version = "1.21.0" %}
 {% set vtk_version = "9.1.0" %}
-{% set libnetcdf_version = "4.8.1" %}
-{% set netcdf4_version = "1.5.8" %}
 
 package:
   name: python-mint
@@ -9,10 +7,10 @@ package:
 
 source:
   url: https://github.com/pletzer/mint/archive/v{{ version }}.tar.gz
-  sha256: 8173f7e9967ba1830a475850d7fae17db68e4469e8a5790fc5a70bfee67618e7
+  sha256: de29cf6fffffaa97adec7b1124140e8ef424fe874639a7e4fe80d417e30d44b1
 
 build:
-  number: 3
+  number: 0
   skip: true  # [py<38]
   script: {{ PYTHON }} -m pip install . --no-deps -vvv
 
@@ -27,13 +25,13 @@ requirements:
     - pip
     - setuptools
     - tbb-devel
-    - libnetcdf ={{ libnetcdf_version }}
+    - libnetcdf
     - vtk ={{ vtk_version }}
   run:
     - python
     - numpy
-    - netcdf4 ={{ netcdf4_version }}
-    - libnetcdf ={{ libnetcdf_version }}
+    - netcdf4
+    - libnetcdf
     - vtk ={{ vtk_version }}
 
 test:
