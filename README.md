@@ -12,7 +12,7 @@ Summary: Mimetic INTerpolation on the Sphere.
 mint regrids edge centred fields from a source to a destination grid.
 The grid is stored as a collection of grid cells, each having four vertices
 (i.e., the cells are quadrilaterals) in longitude-latitude space.
-The edge field is stored as integralsmof a vector field along each edge.
+The edge field is stored as integrals of a vector field along each edge.
 The regridding method is mimetic in the sense that
 Stokes's theorem is satisfied to near machine precision. In particular, the
 loop integrals of an interpolated vector field deriving from a gradient is zero.
