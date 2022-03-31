@@ -10,8 +10,9 @@ source:
   sha256: 0ebb001cb7f4ba2e5970c87384ae59af005bb5e101d63d02a64b9028f17293aa
 
 build:
-  number: 0
-  skip: true  # [py<37 and win]
+  number: 1
+  skip: True  # [py<37]
+  skip: True  # [win and (py!=39)]
   script: {{ PYTHON }} -m pip install . --no-deps -vvv
 
 requirements:
