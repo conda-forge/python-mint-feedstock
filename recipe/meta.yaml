@@ -1,4 +1,4 @@
-{% set version = "1.23.0" %}
+{% set version = "1.23.3" %}
 {% set vtk_version = "9.1.0" %}
 
 package:
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://github.com/pletzer/mint/archive/v{{ version }}.tar.gz
-  sha256: 0ebb001cb7f4ba2e5970c87384ae59af005bb5e101d63d02a64b9028f17293aa
+  sha256: a8ed977281f6885dc64a9cb09c85d5203092a31178d394608bab14fdb27499a6
 
 build:
-  number: 2
+  number: 0
   skip: true  # [py<37 or win]
   script: {{ PYTHON }} -m pip install . --no-deps -vvv
 
