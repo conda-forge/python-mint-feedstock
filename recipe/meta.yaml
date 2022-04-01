@@ -1,5 +1,5 @@
-{% set version = "1.18.3" %}
-{% set vtk_version = "9.0.3" %}
+{% set version = "1.23.3" %}
+{% set vtk_version = "9.1.0" %}
 
 package:
   name: python-mint
@@ -7,11 +7,12 @@ package:
 
 source:
   url: https://github.com/pletzer/mint/archive/v{{ version }}.tar.gz
-  sha256: 8ef5ebbd363f0bb0c1d89d1a45788adabcf0f4d7da85570a7b25cb854bd5a6fc
+  sha256: a8ed977281f6885dc64a9cb09c85d5203092a31178d394608bab14fdb27499a6
 
 build:
-  number: 9
-  skip: true  # [py<39 or py>39]
+  number: 0
+  skip: True  # [py<37]
+  skip: True  # [win]
   script: {{ PYTHON }} -m pip install . --no-deps -vvv
 
 requirements:
