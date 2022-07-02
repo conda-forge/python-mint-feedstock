@@ -27,9 +27,9 @@ python:
 target_platform:
 - osx-64
 tbb_devel:
-- '2020'
+- '2021'
 vtk:
-- 9.0.3
+- 9.1.0
 zip_keys:
 - - c_compiler_version
   - cxx_compiler_version
