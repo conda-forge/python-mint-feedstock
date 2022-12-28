@@ -1,4 +1,4 @@
-{% set version = "1.27.2" %}
+{% set version = "1.27.3" %}
 {% set vtk_version = "9.2.2" %}
 
 package:
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/pletzer/mint/archive/v{{ version }}.tar.gz
-  sha256: 8c1caf2264936ec1923a42ea06bd55ef1c35ed2ef48de23f4a4873b36e19ff66
+  sha256: bd5d5420f5074ee6cd75d0867cbf803cc7f42549b218a5a0adc23c272e071bc0
 
 build:
   number: 0
