@@ -1,5 +1,5 @@
-{% set version = "1.23.0" %}
-{% set vtk_version = "9.1.0" %}
+{% set version = "1.27.3" %}
+{% set vtk_version = "9.2.2" %}
 
 package:
   name: python-mint
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://github.com/pletzer/mint/archive/v{{ version }}.tar.gz
-  sha256: 0ebb001cb7f4ba2e5970c87384ae59af005bb5e101d63d02a64b9028f17293aa
+  sha256: bd5d5420f5074ee6cd75d0867cbf803cc7f42549b218a5a0adc23c272e071bc0
 
 build:
-  number: 2
-  skip: true  # [py<37 or win]
+  number: 0
+  skip: true  # [py<38]
   script: {{ PYTHON }} -m pip install . --no-deps -vvv
 
 requirements:
@@ -25,14 +25,14 @@ requirements:
     - pip
     - setuptools
     - tbb-devel
-    - libnetcdf
     - vtk ={{ vtk_version }}
+    - scitools-iris
   run:
     - python
     - numpy
     - netcdf4
-    - libnetcdf
     - vtk ={{ vtk_version }}
+    - scitools-iris
 
 test:
   imports:
