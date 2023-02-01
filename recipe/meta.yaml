@@ -1,5 +1,5 @@
 {% set version = "1.27.7" %}
-{% set vtk_version = "9.2.2" %}
+{% set vtk_version = "9.2.5" %}
 
 package:
   name: python-mint
