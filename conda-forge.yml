@@ -1,8 +1,8 @@
 conda_forge_output_validation: true
 provider:
-  linux: azure
-  osx: azure
-  win: azure
+  linux_64: azure
+  osx_64: azure
+  win_64: azure
 azure:
   settings_win:
     pool:
