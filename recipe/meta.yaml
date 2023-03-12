@@ -1,4 +1,4 @@
-{% set version = "1.28.0" %}
+{% set version = "1.28.1`" %}
 {% set vtk_version = "9.2.5" %}
 
 package:
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/pletzer/mint/archive/v{{ version }}.tar.gz
-  sha256: f280dfefba404912010e447e2934827c44c8eb167c2f2d58ebbcaccb04a66f1c
+  sha256: ddd1586fe579bef2e1ccbc1a297273950495a181f0723217564dbaec970d2d6d
 
 build:
   number: 0
@@ -30,7 +30,6 @@ requirements:
   run:
     - python
     - numpy
-    - netcdf4
     - vtk ={{ vtk_version }}
     - scitools-iris
 
