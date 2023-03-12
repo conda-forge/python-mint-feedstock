@@ -1,4 +1,4 @@
-{% set version = "1.28.1`" %}
+{% set version = "1.28.1" %}
 {% set vtk_version = "9.2.5" %}
 
 package:
@@ -10,7 +10,7 @@ source:
   sha256: ddd1586fe579bef2e1ccbc1a297273950495a181f0723217564dbaec970d2d6d
 
 build:
-  number: 0
+  number: 1
   skip: true  # [py<38]
   script: {{ PYTHON }} -m pip install . --no-deps -vvv
 
