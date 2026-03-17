@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://github.com/pletzer/mint/archive/v{{ version }}.tar.gz
-  sha256: b8308f0195725aadb161ba8205914a7825dd2ee503e05fb50851c21c18452d29 
+  sha256: b8308f0195725aadb161ba8205914a7825dd2ee503e05fb50851c21c18452d29
 
 build:
-  number: 1
+  number: 2
   skip: true  # [py<38]
   script: {{ PYTHON }} -m pip install . --no-deps -vvv
 
@@ -18,7 +18,6 @@ requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
-    - {{ cdt('mesa-libGL-devel') }}  # [linux]
   host:
     - python
     - cython
@@ -27,6 +26,7 @@ requirements:
     - tbb-devel
     - vtk ={{ vtk_version }}
     - scitools-iris
+    - libgl-devel                    # [linux]
   run:
     - python
     - numpy
