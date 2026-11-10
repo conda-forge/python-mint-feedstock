@@ -3,10 +3,6 @@ provider:
   linux_64: azure
   osx_64: azure
   win_64: azure
-azure:
-  settings_win:
-    pool:
-      vmImage: windows-2019
 github:
   branch_name: main
   tooling_branch_name: main
