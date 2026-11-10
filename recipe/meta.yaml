@@ -1,5 +1,4 @@
-{% set version = "1.28.2" %}
-{% set vtk_version = "9.2.5" %}
+{% set version = "1.36.0" %}
 
 package:
   name: python-mint
@@ -7,31 +6,28 @@ package:
 
 source:
   url: https://github.com/pletzer/mint/archive/v{{ version }}.tar.gz
-  sha256: b8308f0195725aadb161ba8205914a7825dd2ee503e05fb50851c21c18452d29 
+  sha256: 073c981f8b55c64bd99ff67e0e14678cf2271e716dafbf7b1a1c1aefd311ec8a
 
 build:
-  number: 2
-  skip: true  # [py<38]
-  script: {{ PYTHON }} -m pip install . --no-deps -vvv
+  number: 0
+  skip: true  # [py<310]
+  script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation -vvv
 
 requirements:
   build:
     - {{ compiler('c') }}
-    - {{ stdlib("c") }}
+    - {{ stdlib('c') }}
     - {{ compiler('cxx') }}
-    - {{ cdt('mesa-libGL-devel') }}  # [linux]
   host:
     - python
     - cython
     - pip
     - setuptools
-    - tbb-devel
-    - vtk ={{ vtk_version }}
-    - scitools-iris
+    - vtk-base
   run:
     - python
     - numpy
-    - vtk ={{ vtk_version }}
+    - {{ pin_compatible('vtk-base', max_pin='x.x.x') }}
     - netcdf4
     - scitools-iris
 
@@ -48,8 +44,8 @@ about:
   description: |
     mint regrids edge centred fields from a source to a destination grid.
     The grid is stored as a collection of grid cells, each having four vertices
-    (i.e., the cells are quadrilaterals) in longitude-latitude space. 
-    The edge field is stored as integrals of a vector field along each edge. 
+    (i.e., the cells are quadrilaterals) in longitude-latitude space.
+    The edge field is stored as integrals of a vector field along each edge.
     The regridding method is mimetic in the sense that
     Stokes's theorem is satisfied to near machine precision. In particular, the
     loop integrals of an interpolated vector field deriving from a gradient is zero.
